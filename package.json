@@ -1,0 +1,27 @@
+{
+  "name": "ez-build",
+  "version": "0.0.1",
+  "description": "Make webpack build a bit easier with this pre-made configuration",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eliraz-refael/ez-build"
+  },
+  "keywords": [
+    "build",
+    "webpack",
+    "typescript"
+  ],
+  "author": "Eliraz Kedmi",
+  "license": "MIT",
+  "dependencies": {
+    "awesome-typescript-loader": "^3.2.3",
+    "friendly-errors-webpack-plugin": "^1.6.1",
+    "html-webpack-plugin": "^2.30.1",
+    "webpack": "^3.7.1",
+    "webpack-merge": "^4.1.0"
+  }
+}
