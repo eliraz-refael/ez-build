@@ -1,6 +1,6 @@
 {
   "name": "ez-build",
-  "version": "0.0.1",
+  "version": "1.0.0-rc.1",
   "description": "Make webpack build a bit easier with this pre-made configuration",
   "main": "index.js",
   "scripts": {
