@@ -13,7 +13,7 @@ const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 
 module.exports = class WebpackConfig {
 
-	constructor({ appDir = 'dir', buildDir = 'build', testDir = 'test', title = '' }) {
+	constructor({ appDir = 'app', buildDir = 'build', testDir = 'test', title = '' } = {}) {
 		this.appDir = appDir;
 		this.buildDir = buildDir;
 		this.testDir = testDir;
@@ -57,7 +57,7 @@ module.exports = class WebpackConfig {
 		]
 	}
 
-	setEntry({ outputName = 'bundle', source = './index.tsx' }) {
+	setEntry({ outputName = 'bundle', source = './index.tsx' } = {}) {
 		this.entry = {
 			[outputName]: source
 		}
