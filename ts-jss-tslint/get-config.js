@@ -94,7 +94,7 @@ module.exports = class WebpackConfig {
 		return {
 			path: this.paths.build,
 			filename: '[name].js',
-			publicPath: '/'
+			publicPath: this.paths.build
 		}
 	}
 
@@ -105,7 +105,7 @@ module.exports = class WebpackConfig {
 				extensions: this.extensions
 			},
 			entry: this.entry,
-			output: this.output,
+			output: this.getOutput(),
 			plugins: this.getPlugins(),
 			module: {
 				rules: this.getRules()

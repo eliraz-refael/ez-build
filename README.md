@@ -9,7 +9,7 @@ I wrote a build configuration using webpack + jss + typescript + tslint and crea
     - dev-server.js
     - get-config.js
 - Create a `dev-server.js` file with the following content
-```
+```javascript
 const devServer = require('ez-build/ts-jss-tslint/dev-server.js');
 const WebpackConfig = require('ez-build/ts-jss-tslint/get-config.js');
 
@@ -24,7 +24,7 @@ devServer.run(webpackConfig.getWebpackConfig());
 ```
 
 - create a `build.js` file with the following content:
-```
+```javascript
 const build = require('ez-build/ts-jss-tslint/build.js');
 const WebpackConfig = require('ez-build/ts-jss-tslint/get-config.js');
 
@@ -39,7 +39,7 @@ build.run(webpackConfig.getWebpackConfig());
 ```
 - create a `build-productions.js` with the following content:
 
-```
+```javascript
 const build = require('ez-build/ts-jss-tslint/build-production.js');
 const WebpackConfig = require('ez-build/ts-jss-tslint/get-config.js');
 
@@ -54,7 +54,7 @@ build.run(webpackConfig.getWebpackConfig());
 ```
 - on your `package.json` file add the following scripts:
 
-```
+```javascript
 "scripts": {
     "build": "node ./build.js",
     "build:production": "node ./build-production.js",
