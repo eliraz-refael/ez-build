@@ -18,13 +18,15 @@
   "author": "Eliraz Kedmi",
   "license": "MIT",
   "dependencies": {
-    "awesome-typescript-loader": "^3.2.3",
+    "awesome-typescript-loader": "^3.3.0",
     "compression-webpack-plugin": "^1.0.1",
     "friendly-errors-webpack-plugin": "^1.6.1",
     "html-webpack-plugin": "^2.30.1",
+    "source-map-loader": "^0.2.3",
+    "tslint": "^5.8.0",
     "tslint-loader": "^3.5.3",
     "webpack": "^3.8.1",
     "webpack-dev-server": "^2.9.3",
-    "webpack-merge": "^4.1.0"
+    "webpack-merge": "^4.1.1"
   }
 }
