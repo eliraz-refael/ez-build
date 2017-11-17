@@ -10,10 +10,9 @@ const PACKAGE = require(`${process.cwd()}/package.json`);
 const { CheckerPlugin } = require('awesome-typescript-loader')
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 
-
 module.exports = class WebpackConfig {
 
-	constructor({ appDir = 'app', buildDir = 'build', testDir = 'test', title = '' } = {}) {
+	constructor({ appDir = 'app', buildDir = 'build', testDir = 'test', title = '', publicPath = '/'} = {}) {
 		this.appDir = appDir;
 		this.buildDir = buildDir;
 		this.testDir = testDir;
@@ -24,7 +23,8 @@ module.exports = class WebpackConfig {
 		this.paths = {
 			app: path.join(this.rootPath, this.appDir),
 			build: path.join(this.rootPath, this.buildDir),
-			test: path.join(this.rootPath, this.testDir)
+			test: path.join(this.rootPath, this.testDir),
+			public: publicPath
 		}
 		this.setEntry();
 		this.setExtensions();
@@ -81,8 +81,15 @@ module.exports = class WebpackConfig {
 				loader: 'tslint-loader',
 				exclude: /node_modules/,
 			},
-			{ enforce: "pre", test: /\.tsx?$/, loader: "source-map-loader" },
-			{ test: /\.tsx?$/, loader: "awesome-typescript-loader" },
+			{
+				enforce: "pre",
+				test: /\.js?$/,
+				loader: "source-map-loader"
+			},
+			{
+				test: /\.tsx?$/,
+				loader: "awesome-typescript-loader"
+			},
 			{
 				test: /\.(eot|svg|ttf|woff|woff2|png|jpg)$/,
 				loader: 'file-loader'
@@ -94,7 +101,7 @@ module.exports = class WebpackConfig {
 		return {
 			path: this.paths.build,
 			filename: '[name].js',
-			publicPath: this.paths.build
+			publicPath: this.paths.public
 		}
 	}
 
@@ -109,7 +116,8 @@ module.exports = class WebpackConfig {
 			plugins: this.getPlugins(),
 			module: {
 				rules: this.getRules()
-			}
+			},
+			devtool: 'source-map'
 		}
 	}
 }
