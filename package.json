@@ -18,7 +18,7 @@
   "author": "Eliraz Kedmi",
   "license": "MIT",
   "dependencies": {
-    "awesome-typescript-loader": "^3.3.0",
+    "awesome-typescript-loader": "^3.4.0",
     "compression-webpack-plugin": "^1.0.1",
     "file-loader": "^1.1.5",
     "friendly-errors-webpack-plugin": "^1.6.1",
@@ -28,8 +28,8 @@
     "tslint-loader": "^3.5.3",
     "typescript": "^2.6.1",
     "webpack": "^3.8.1",
-    "webpack-dashboard": "^1.0.0",
-    "webpack-dev-server": "^2.9.3",
+    "webpack-dashboard": "^1.0.2",
+    "webpack-dev-server": "^2.9.4",
     "webpack-merge": "^4.1.1"
   }
 }
